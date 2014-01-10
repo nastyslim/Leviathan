@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leviathan - Political Dictionary</title>
+	  <%= stylesheet_link_tag "application", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+</head>
+
+<body>
+	<div class="page">
+		<div class="mynav">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="alignleft">
+							<a href="/defenitions" style="padding-left:0; color:#2a3747;  font-size:16px; float:left;margin-top:7px; font-weight: bold;">Political Dictionary</a>	
+						</div>
+						<div class="insearch" style="margin-top:-5px;">
+                			<%= form_tag steppies_searchresult_path, :method => 'get', :class => "form-inline" do %>
+                    			<div class="form-group">
+                       				<%= text_field_tag :search, params[:search], :class => "form-control", :style => "width:220px;" %>
+                    			</div>
+                    			<div class="form-group">
+                        			<%= submit_tag "Search", :name => nil, :class => "btn btn-default sbtn acolor"  %>
+                    			</div>
+                			<% end %>
+       					</div>
+					</div>
+					<!-- right nav-->
+					<div class="col-md-5">
+						<div class="alignleft" style="text-align:right;">
+							<%= link_to 'Request a Defenition', steppies_ask_path, :class => '' %>
+							<%= link_to 'Create a Defenition', new_steppy_path, :class => '' %>
+							<!-- current user toggle -->
+							<% if current_user %>
+								<b><%= link_to current_user.username, current_user %></b>
+								<b><%= link_to "Log Out", logout_path %></b>
+							<% else %>
+								<b><a href="#" id="login">Log In</a></b>
+								<b><%= link_to "Sign Up", new_user_path %></b>
+								<div class=" login">
+									<%= form_tag sessions_path do %>
+										<%= text_field_tag :username, nil, placeholder:"Username", :class => "form-control fw"  %>
+										<%= password_field_tag :password, nil, placeholder:"Password",  :class => "form-control fw"  %>
+										<%= submit_tag "Log in", :class => "btn btn-warning" %>
+									<% end %>
+								</div>
+								
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="alpha">
+					<div class="border">
+						<a href="">A</a>
+						<a href="">B</a>
+						<a href="">C</a>
+						<a href="">D</a>
+						<a href="">E</a>
+						<a href="">F</a>
+						<a href="">G</a>
+						<a href="">H</a>
+						<a href="">I</a>
+						<a href="">J</a>
+						<a href="">K</a>
+						<a href="">L</a>
+						<a href="">M</a>
+						<a href="">N</a>
+						<a href="">O</a>
+						<a href="">P</a>
+						<a href="">Q</a>
+						<a href="">R</a>
+						<a href="">S</a>
+						<a href="">T</a>
+						<a href="">U</a>
+						<a href="">V</a>
+						<a href="">W</a>
+						<a href="">X</a>
+						<a href="">Y</a>
+						<a href="">Z</a>
+					</div>
+			</div>
+			<div class="logo">
+				<img src="/assets/logoeyes.jpg" alt="Leviathan = Political Dictionary" style="width:900px;">
+			</div>
+		</div>
+
+		<div class="appcont ">
+			<div class="container">
+			<%= yield %>
+			</div>
+		</div>
+
+		</br>
+		<div class="footer2">
+			<p style="text-align:center; color:#bbb; font-size:12px; text-shadow: 0 1px 1px rgba(0,0,0,.2); padding-top: 30px;">About Help Blog Status Jobs Ads Terms Privacy Advertisers Businesses Media Developers Resources Directory © 2013 Steppy</p>
+		</div>
+	</div>
+</body>
+
+<script>
+      $(document).ready(function() {
+
+      $("#login").click(function(){
+         $(".login").slideToggle( [300], function(){ 
+             $(".log").text('Slide Down Transition Complete');
+          });
+      });
+   });
+</script>
+
+</html>

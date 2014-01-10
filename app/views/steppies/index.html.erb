@@ -1,0 +1,43 @@
+
+<div class="row maincont mt">
+    <div class="col-md-6 bg">
+        <h1 style="text-align:center;">Newest Defenitions</h1>
+        <% @steppy = Steppy.order('updated_at DESC')%>
+
+        <% @steppy.each do |steppy| %>
+            <% if steppy.goal.present? %>
+                <div class="goal_panel_new">
+                    <%= link_to steppy do%>
+                    <div>
+                        <div class=""><b style="color:cornflowerblue;"><%= steppy.goal %></b></div>
+                    </div>
+                    <% end %>
+                </div>
+            <% else %>        
+            <% end %>
+        <% end %>
+        <br/>
+    </div>
+
+
+
+
+    <div  style="" class="col-md-6">
+        <h1 style="text-align:center;">Recently Requested Defenitions</h1>
+        <% @steppy = Steppy.order('created_at DESC')%>
+
+        <% @steppy.each do |steppy| %>
+            <% if steppy.ask.present? %>        
+                <div class="goal_panel_new">
+                    <%= link_to steppy do%>
+                        <div>
+                            <div class="goal"><%= steppy.ask %></div>
+                        </div>
+                    <% end %>
+                </div>
+            <% else %>
+            <% end %>
+        <% end %>
+    </div>
+    <h1 style="text-align:center;">Most Popular Defenitions</h1>
+</div>
