@@ -63,6 +63,7 @@ class SteppiesController < ApplicationController
 
     respond_to do |format|
       if @steppy.save
+        FlagMailer.flag_email.deliver
         format.html { redirect_to @steppy, notice: 'Steppy was successfully created.' }
         format.json { render json: @steppy, status: :created, location: @steppy }
       else
