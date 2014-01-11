@@ -17,6 +17,13 @@ class SteppiesController < ApplicationController
   def show
     @steppy = Steppy.find(params[:id])
     @relationship = Relationship.new
+    @flagon = (params[:flagon])
+
+    if @flagon == "flag"
+      FlagMailer.flag_email(@steppy).deliver
+      flash[:notice] = "flaggexds"
+    else
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -63,7 +70,6 @@ class SteppiesController < ApplicationController
 
     respond_to do |format|
       if @steppy.save
-        FlagMailer.flag_email.deliver
         format.html { redirect_to @steppy, notice: 'Steppy was successfully created.' }
         format.json { render json: @steppy, status: :created, location: @steppy }
       else
@@ -80,7 +86,7 @@ class SteppiesController < ApplicationController
 
     respond_to do |format|
       if @steppy.update_attributes(params[:steppy])
-        
+                
         format.html { redirect_to @steppy, notice: 'Steppy was successfully updated.' }
         format.json { head :no_content }
       else
