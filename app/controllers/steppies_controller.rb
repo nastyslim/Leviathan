@@ -21,7 +21,7 @@ class SteppiesController < ApplicationController
 
     if @flagon == "flag"
       FlagMailer.flag_email(@steppy).deliver
-      flash[:notice] = "flaggexds"
+      flash[:notice] = "Definition Flagged"
     else
     end
 

@@ -43,11 +43,7 @@
                           <span style="font-size:11px;"><%= time_ago_in_words(@steppy.created_at) %> ago.</span>
                         </li>
                         <li>
-                          <span style="font-size:11px; color:crimson; font-weight:bold;">Flag</span>
-                          
-                        </li>
-                        <li>
-                          <%= link_to 'flag', steppy_path(:flagon => "flag") %>
+                          <%= link_to 'Flag', steppy_path(:flagon => "flag"), :style => "font-size:11px; color:crimson; font-weight:bold;" %>
                         </li>
                       </ul>
                     </div>
