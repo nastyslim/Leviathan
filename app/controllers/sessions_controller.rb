@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   	user = User.find_by_username params[:username]
   	if user and user.authenticate(params[:password])
   		session[:user_id] = user.id 
-  		redirect_to root_url, notice: "logged in"
+  		redirect_to root_url, notice: "Logged In"
   	else
   		redirect_to root_url
   	end
@@ -12,6 +12,6 @@ class SessionsController < ApplicationController
 
   def destroy
   	session[:user_id] = nil
-  	redirect_to root_url, notice: "logged out"
+  	redirect_to root_url, notice: "Logged Out"
   end
 end

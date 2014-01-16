@@ -14,6 +14,7 @@ SteppyApp::Application.routes.draw do
   get "steppies/ask", to: "steppies#ask"
   get "steppies/ask2"
   get "steppies/searchresult"
+  get "steppies/charlist"
   get "steppies/create"
   get "users/:id" => "users#show"
 

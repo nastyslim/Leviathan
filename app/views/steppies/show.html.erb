@@ -37,7 +37,7 @@
                     <div class="inline">
                       <ul>
                         <li>
-                          <span>By <span style="color:#4386C9;"><b><%= @steppy.userid %></b></span></span>
+                          <span>By <span style="color:#4386C9;"><b><%= @steppy.author1 %></b></span></span>
                         </li>
                         <li>
                           <span style="font-size:11px;"><%= time_ago_in_words(@steppy.created_at) %> ago.</span>
@@ -51,9 +51,6 @@
                 </div>
               </div>
 
-              
-
-
               <% if @steppy.step2.present? %>
                 <div class="row" style="margin-top:50px;">
                   <div class="col-md-1">
@@ -61,111 +58,292 @@
                   </div>
                   <div class="col-md-11">
                     <p style="font-size:14px;" class="goal_panel2">
+                      <b><%= @steppy.goal %> - </b>
                       <%= @steppy.step2 %>
+                      <br><br><br>
+                      <span style="margin-top:30px;"><b>Example:</b></span> 
+                      <br>
+                      <span><i><%= @steppy.example2 %></i></span>
+                      <div class="inline">
+                        <ul>
+                          <li>
+                            <span>By <span style="color:#4386C9;"><b><%= @steppy.author2 %></b></span></span>
+                          </li>
+                          <li>
+                            <span style="font-size:11px;"><%= time_ago_in_words(@steppy.updated_at) %> ago.</span>
+                          </li>
+                          <li>
+                            <%= link_to 'Flag', steppy_path(:flagon => "flag"), :style => "font-size:11px; color:crimson; font-weight:bold;" %>
+                          </li>
+                        </ul>
+                      </div>
                     </p>
-                  
-                
-                <div class="inline">
-                      <ul>
-                        <li>
-                          <span>By <span style="color:#4386C9;"><b><%= @steppy.userid %></b></span></span>
-                        </li>
-                        <li>
-                          <span style="font-size:11px;"><%= time_ago_in_words(@steppy.updated_at) %> ago.</span>
-                        </li>
-                        <li>
-                          <span style="font-size:11px; color:crimson; font-weight:bold;">Flag</span>
-                        </li>
-                      </ul>
-                    </div>
-                    </div>             
                   </div>
+                </div>
               <% else %>          
               <% end %>
+
+              <% if @steppy.step3.present? %>
+                <div class="row" style="margin-top:50px;">
+                  <div class="col-md-1">
+                    <p style="font-size:24px;" class="numbs">3.</p>
+                  </div>
+                  <div class="col-md-11">
+                    <p style="font-size:14px;" class="goal_panel2">
+                      <b><%= @steppy.goal %> - </b>
+                      <%= @steppy.step3 %>
+                      <br><br><br>
+                      <span style="margin-top:30px;"><b>Example:</b></span> 
+                      <br>
+                      <span><i><%= @steppy.example3 %></i></span>
+                      <div class="inline">
+                        <ul>
+                          <li>
+                            <span>By <span style="color:#4386C9;"><b><%= @steppy.author3 %></b></span></span>
+                          </li>
+                          <li>
+                            <span style="font-size:11px;"><%= time_ago_in_words(@steppy.updated_at) %> ago.</span>
+                          </li>
+                          <li>
+                            <%= link_to 'Flag', steppy_path(:flagon => "flag"), :style => "font-size:11px; color:crimson; font-weight:bold;" %>
+                          </li>
+                        </ul>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              <% else %>          
+              <% end %>
+
+              <% if @steppy.step4.present? %>
+                <div class="row" style="margin-top:50px;">
+                  <div class="col-md-1">
+                    <p style="font-size:24px;" class="numbs">4.</p>
+                  </div>
+                  <div class="col-md-11">
+                    <p style="font-size:14px;" class="goal_panel2">
+                      <b><%= @steppy.goal %> - </b>
+                      <%= @steppy.step4 %>
+                      <br><br><br>
+                      <span style="margin-top:30px;"><b>Example:</b></span> 
+                      <br>
+                      <span><i><%= @steppy.example4 %></i></span>
+                      <div class="inline">
+                        <ul>
+                          <li>
+                            <span>By <span style="color:#4386C9;"><b><%= @steppy.author4 %></b></span></span>
+                          </li>
+                          <li>
+                            <span style="font-size:11px;"><%= time_ago_in_words(@steppy.updated_at) %> ago.</span>
+                          </li>
+                          <li>
+                            <%= link_to 'Flag', steppy_path(:flagon => "flag"), :style => "font-size:11px; color:crimson; font-weight:bold;" %>
+                          </li>
+                        </ul>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              <% else %>          
+              <% end %>
+
+              <% if @steppy.step5.present? %>
+                <div class="row" style="margin-top:50px;">
+                  <div class="col-md-1">
+                    <p style="font-size:24px;" class="numbs">5.</p>
+                  </div>
+                  <div class="col-md-11">
+                    <p style="font-size:14px;" class="goal_panel2">
+                      <b><%= @steppy.goal %> - </b>
+                      <%= @steppy.step5 %>
+                      <br><br><br>
+                      <span style="margin-top:30px;"><b>Example:</b></span> 
+                      <br>
+                      <span><i><%= @steppy.example5 %></i></span>
+                      <div class="inline">
+                        <ul>
+                          <li>
+                            <span>By <span style="color:#4386C9;"><b><%= @steppy.author5 %></b></span></span>
+                          </li>
+                          <li>
+                            <span style="font-size:11px;"><%= time_ago_in_words(@steppy.updated_at) %> ago.</span>
+                          </li>
+                          <li>
+                            <%= link_to 'Flag', steppy_path(:flagon => "flag"), :style => "font-size:11px; color:crimson; font-weight:bold;" %>
+                          </li>
+                        </ul>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              <% else %>          
+              <% end %>
+
+              <% if @steppy.step6.present? %>
+                <div class="row" style="margin-top:50px;">
+                  <div class="col-md-1">
+                    <p style="font-size:24px;" class="numbs">6.</p>
+                  </div>
+                  <div class="col-md-11">
+                    <p style="font-size:14px;" class="goal_panel2">
+                      <b><%= @steppy.goal %> - </b>
+                      <%= @steppy.step6 %>
+                      <br><br><br>
+                      <span style="margin-top:30px;"><b>Example:</b></span> 
+                      <br>
+                      <span><i><%= @steppy.Example6 %></i></span>
+                      <div class="inline">
+                        <ul>
+                          <li>
+                            <span>By <span style="color:#4386C9;"><b><%= @steppy.author6 %></b></span></span>
+                          </li>
+                          <li>
+                            <span style="font-size:11px;"><%= time_ago_in_words(@steppy.updated_at) %> ago.</span>
+                          </li>
+                          <li>
+                            <%= link_to 'Flag', steppy_path(:flagon => "flag"), :style => "font-size:11px; color:crimson; font-weight:bold;" %>
+                          </li>
+                        </ul>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              <% else %>          
+              <% end %>
+
+              <% if @steppy.step7.present? %>
+                <div class="row" style="margin-top:50px;">
+                  <div class="col-md-1">
+                    <p style="font-size:24px;" class="numbs">7.</p>
+                  </div>
+                  <div class="col-md-11">
+                    <p style="font-size:14px;" class="goal_panel2">
+                      <b><%= @steppy.goal %> - </b>
+                      <%= @steppy.step7 %>
+                      <br><br><br>
+                      <span style="margin-top:30px;"><b>Example:</b></span> 
+                      <br>
+                      <span><i><%= @steppy.Example7 %></i></span>
+                      <div class="inline">
+                        <ul>
+                          <li>
+                            <span>By <span style="color:#4386C9;"><b><%= @steppy.author7 %></b></span></span>
+                          </li>
+                          <li>
+                            <span style="font-size:11px;"><%= time_ago_in_words(@steppy.updated_at) %> ago.</span>
+                          </li>
+                          <li>
+                            <%= link_to 'Flag', steppy_path(:flagon => "flag"), :style => "font-size:11px; color:crimson; font-weight:bold;" %>
+                          </li>
+                        </ul>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              <% else %>          
+              <% end %>
+
+              <% if @steppy.step8.present? %>
+                <div class="row" style="margin-top:50px;">
+                  <div class="col-md-1">
+                    <p style="font-size:24px;" class="numbs">8.</p>
+                  </div>
+                  <div class="col-md-11">
+                    <p style="font-size:14px;" class="goal_panel2">
+                      <b><%= @steppy.goal %> - </b>
+                      <%= @steppy.step8 %>
+                      <br><br><br>
+                      <span style="margin-top:30px;"><b>Example:</b></span> 
+                      <br>
+                      <span><i><%= @steppy.Example8 %></i></span>
+                      <div class="inline">
+                        <ul>
+                          <li>
+                            <span>By <span style="color:#4386C9;"><b><%= @steppy.author8 %></b></span></span>
+                          </li>
+                          <li>
+                            <span style="font-size:11px;"><%= time_ago_in_words(@steppy.updated_at) %> ago.</span>
+                          </li>
+                          <li>
+                            <%= link_to 'Flag', steppy_path(:flagon => "flag"), :style => "font-size:11px; color:crimson; font-weight:bold;" %>
+                          </li>
+                        </ul>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              <% else %>          
+              <% end %>
+
+              <% if @steppy.step9.present? %>
+                <div class="row" style="margin-top:50px;">
+                  <div class="col-md-1">
+                    <p style="font-size:24px;" class="numbs">9.</p>
+                  </div>
+                  <div class="col-md-11">
+                    <p style="font-size:14px;" class="goal_panel2">
+                      <b><%= @steppy.goal %> - </b>
+                      <%= @steppy.step9 %>
+                      <br><br><br>
+                      <span style="margin-top:30px;"><b>Example:</b></span> 
+                      <br>
+                      <span><i><%= @steppy.Example9 %></i></span>
+                      <div class="inline">
+                        <ul>
+                          <li>
+                            <span>By <span style="color:#4386C9;"><b><%= @steppy.author9 %></b></span></span>
+                          </li>
+                          <li>
+                            <span style="font-size:11px;"><%= time_ago_in_words(@steppy.updated_at) %> ago.</span>
+                          </li>
+                          <li>
+                            <%= link_to 'Flag', steppy_path(:flagon => "flag"), :style => "font-size:11px; color:crimson; font-weight:bold;" %>
+                          </li>
+                        </ul>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              <% else %>          
+              <% end %>
+
+              <% if @steppy.step10.present? %>
+                <div class="row" style="margin-top:50px;">
+                  <div class="col-md-1">
+                    <p style="font-size:24px;" class="numbs">10.</p>
+                  </div>
+                  <div class="col-md-11">
+                    <p style="font-size:14px;" class="goal_panel2">
+                      <b><%= @steppy.goal %> - </b>
+                      <%= @steppy.step10 %>
+                      <br><br><br>
+                      <span style="margin-top:30px;"><b>Example:</b></span> 
+                      <br>
+                      <span><i><%= @steppy.Example10 %></i></span>
+                      <div class="inline">
+                        <ul>
+                          <li>
+                            <span>By <span style="color:#4386C9;"><b><%= @steppy.author10 %></b></span></span>
+                          </li>
+                          <li>
+                            <span style="font-size:11px;"><%= time_ago_in_words(@steppy.updated_at) %> ago.</span>
+                          </li>
+                          <li>
+                            <%= link_to 'Flag', steppy_path(:flagon => "flag"), :style => "font-size:11px; color:crimson; font-weight:bold;" %>
+                          </li>
+                        </ul>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              <% else %>          
+              <% end %>
+
+
     
-            <% if @steppy.step5.present? %>
-                        <div class="row">
-              <div class="col-md-1">
-                <p style="font-size:24px;" class="numbs">5</p>
-              </div>
-              <div class="col-md-11">
-                <p style="font-size:14px;" class="goal_panel2">
-                  <%= @steppy.step5 %>
-                </p>
-              </div>
-            </div>             
-            <% else %>            
-            <% end %>
+            
 
-            <% if @steppy.step6.present? %>
-              <div class="row">
-                <div class="col-md-1">
-                  <p style="font-size:24px;" class="numbs">6</p>
-                </div>
-                <div class="col-md-11">
-                  <p style="font-size:14px;" class="goal_panel2">
-                    <%= @steppy.step6 %>
-                  </p>
-                </div>
-              </div>             
-            <% else %>                     
-            <% end %>
 
-            <% if @steppy.step7.present? %>
-              <div class="row">
-                <div class="col-md-1">
-                  <p style="font-size:24px;" class="numbs">7</p>
-                </div>
-                <div class="col-md-11">
-                  <p style="font-size:14px;" class="goal_panel2">
-                    <%= @steppy.step7 %>
-                  </p>
-                </div>
-              </div>             
-            <% else %>                                
-            <% end %>
-
-            <% if @steppy.step8.present? %>
-              <div class="row">
-                <div class="col-md-1">
-                  <p style="font-size:24px;" class="numbs">8</p>
-                </div>
-                <div class="col-md-11">
-                  <p style="font-size:14px;" class="goal_panel2">
-                    <%= @steppy.step8 %>
-                  </p>
-                </div>
-              </div>             
-            <% else %>                  
-            <% end %>
-
-            <% if @steppy.step9.present? %>
-              <div class="row">
-                <div class="col-md-1">
-                  <p style="font-size:24px;" class="numbs">9</p>
-                </div>
-                <div class="col-md-11">
-                  <p style="font-size:14px;" class="goal_panel2">
-                    <%= @steppy.step9 %>
-                  </p>
-                </div>
-              </div>             
-            <% else %>                       
-            <% end %>
-
-            <% if @steppy.step10.present? %>
-              <div class="row">
-                <div class="col-md-1">
-                  <p style="font-size:24px;" class="numbs">10</p>
-                </div>
-                <div class="col-md-11">
-                  <p style="font-size:14px;" class="goal_panel2">
-                    <%= @steppy.step10 %>
-                  </p>
-                </div>
-              </div>             
-            <% else %>                  
-            <% end %>
 
             <div class="fix">
               See something that's not right?
@@ -223,16 +401,18 @@
       <% else %>
       <% end %>
 
+
+    <% if current_user  %>
     <div class="editpanel" style="margin-top:50px;">
       <%= link_to 'Edit', edit_steppy_path(@steppy) %> |
       <%= link_to 'Back', steppies_path %> |
       <%= link_to 'Destroy', steppy_path, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
     </div>
+    <% else %>
+    <% end %>
 
-    <div class="col-md-3" style="z-index:0;">
-      
-    </div>
+    <%= current_user %>
 
   </div>
 </div>

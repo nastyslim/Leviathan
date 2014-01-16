@@ -17,6 +17,7 @@ class SteppiesController < ApplicationController
   def show
     @steppy = Steppy.find(params[:id])
     @relationship = Relationship.new
+    @rep = Rep.new
     @flagon = (params[:flagon])
 
     if @flagon == "flag"
@@ -55,6 +56,7 @@ class SteppiesController < ApplicationController
 
   # GET /steppies/1/edit
   def edit
+    @rep = Rep.new
     @steppy = Steppy.find(params[:id])
   end
 
@@ -70,7 +72,7 @@ class SteppiesController < ApplicationController
 
     respond_to do |format|
       if @steppy.save
-        format.html { redirect_to @steppy, notice: 'Steppy was successfully created.' }
+        format.html { redirect_to @steppy, notice: 'Defenition was successfully created.' }
         format.json { render json: @steppy, status: :created, location: @steppy }
       else
         format.html { render action: "new" }
@@ -87,7 +89,7 @@ class SteppiesController < ApplicationController
     respond_to do |format|
       if @steppy.update_attributes(params[:steppy])
                 
-        format.html { redirect_to @steppy, notice: 'Steppy was successfully updated.' }
+        format.html { redirect_to @steppy, notice: 'Defenition was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -110,6 +112,11 @@ class SteppiesController < ApplicationController
 
   def searchresult
     @steppy = Steppy.new
+    @char = (params[:char])
+  end
+
+  def charlist
+    @a = Steppy.all(:conditions => "goal like '#{params[:char]}%'")
   end
 
 end

@@ -1,0 +1,15 @@
+<div>
+		<h4>Definitions starting with: <%= params[:char] %></h4>
+		<% @a.each do |a| %>
+		  <div style="" class="searchresults">
+		  	<div><%= link_to a.goal, steppy_path(a) %> in</div>
+		  	<% if a.description.present? %>
+		  		<div style="font-size:14px;"><%= a.description %></div>
+		  		<div style="font-size:14px; color:grey;">Created <%= time_ago_in_words(a.created_at) %> ago.</div>
+		  	<% else %>
+		  		<p style="font-size:14px; color:grey; margin:0;">No description.</p>
+		  		<div style="font-size:14px; color:grey;">Created <%= time_ago_in_words(a.created_at) %> ago.</div>
+		  	<% end %>
+		  </div>
+		<% end %>
+	</div>

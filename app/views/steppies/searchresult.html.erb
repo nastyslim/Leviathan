@@ -1,6 +1,7 @@
-<h1>Search Results For How To Be A <%= params[:search] %> </h1>
+<h1>Search Results For: <%= params[:search] %> </h1>
 
 <div class="maincont formpgs">
+
 	<% if search().present? %>
 		<% search().each do |result| %>
 		  <div style="" class="searchresults">
